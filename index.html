@@ -8,162 +8,248 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <title>spotify tailwind</title>
 </head>
-  <body class="bg-black flex flex-col h-screen">
-    <nav class="bg-black px-4 py-2 flex justify-between items-center sticky top-0">
-      <div class="flex items-center gap-4">
-        <div class="hover:cursor-pointer"><i class="fa-brands fa-spotify fa-2xl" style="color: #ffffff;"></i></div>
-        <div class="flex items-center gap-1">
-          <div class="flex p-[10px] bg-zinc-800 rounded-full hover:scale-[105%] transition hover:bg-zinc-700 text-zinc-400 hover:text-white"><i class="fa-solid fa-house rounded-full p-0.5"></i></div>
-          <div class="flex gap-1.5 bg-zinc-800 p-[8px] rounded-full items-center hover:bg-zinc-600 transition w-96">
-            <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
-            <input type="text" placeholder="¿Que quieres reproducir?" class="hidden lg:flex text-gray-200 outline-none w-[200px]">
-            <div class="icon-gallery-vertical-end"></div>
+
+<body class="bg-black flex flex-col h-screen">
+<!--    NAVBAR    -->
+  <nav class="bg-black px-4 py-2 flex justify-between items-center sticky top-0">
+    <div class="flex items-center gap-4">
+      <div class="hover:cursor-pointer"><i class="fa-brands fa-spotify fa-2xl" style="color: #ffffff;"></i></div>
+      <div class="flex items-center gap-1">
+        <div class="flex p-[10px] bg-zinc-800 rounded-full hover:scale-[105%] transition hover:bg-zinc-700 text-zinc-400 hover:text-white"><i class="fa-solid fa-house rounded-full p-0.5"></i></div>
+        <div class="flex gap-1.5 bg-zinc-800 p-[8px] rounded-full items-center hover:bg-zinc-600 transition w-96">
+          <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+          <input type="text" placeholder="¿Que quieres reproducir?" class="hidden lg:flex text-gray-200 outline-none w-[200px]">
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 hidden lg:flex">
+        <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Premium</p>
+        <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Asistencia</p>
+        <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Descargar</p>
+      </div>
+      <p class="text-white text-lg hidden lg:flex">|</p>
+      <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hidden lg:flex hover:scale-[105%] transition items-center gap-1.5"><i class="fa-solid fa-download"></i>Instalar app</p>
+      <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hidden lg:flex hover:scale-[105%] transition">Registrarte</p>
+      <button class="bg-white px-[30px] py-[10px] text-black font-bold rounded-full hover:cursor-pointer hover:scale-[105%] transition hover:bg-neutral-200 hidden lg:flex">Iniciar sesion</button>
+      <div class="bg-white p-[20px] flex lg:hidden"></div>
+    </div>
+  </nav>
+
+  <div class="flex justify-evenly gap-3 ml-3 mr-3 mb-2 h-full overflow-hidden pb-[5rem]">
+  <!--    MENU LATERAL    -->
+    <aside class="w-96 bg-zinc-950 text-white h-auto p-3 flex flex-col rounded-[8px]">
+        <div class="mb-auto">
+          <div class="">
+            <div class=" pb-5 pl-2 pr-2">
+              <h2 class="font-bold mb-4 flex justify-between items-center">Tu biblioteca<i class="fa-solid fa-plus hover:cursor-pointer hover:rounded-full p-[7px] hover:scale-[110%] hover:transition hover:bg-zinc-800"></i></h2>
+            </div>
+            <div class="bg-neutral-900 rounded-lg p-4 mb-4">
+              <p class="text-[16px] mb-2 font-bold ">Crea tu primera lista</p>
+              <p class="text-[14px] text-white mb-4">Es muy fácil, y te echaremos una mano.</p>
+              <button class="bg-white text-black rounded-full text-sm font-semibold px-4 py-1 hover:cursor-pointer hover:scale-[105%] transition">Crear lista</button>
+            </div>
+            <div class="bg-neutral-900 rounded-lg p-4">
+              <p class="text-[16px] mb-2 font-bold">Encuentra pódcasts que quieras seguir</p>
+              <p class="text-[14px] text-white mb-4">Te avisaremos cuando salgan nuevos episodios</p>
+              <button class="bg-white text-black rounded-full text-sm font-semibold px-4 py-1 hover:cursor-pointer hover:scale-[105%] transition">Explorar pódcasts</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2 hidden lg:flex">
-          <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Premium</p>
-          <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Asistencia</p>
-          <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hover:scale-[105%] transition">Descargar</p>
-        </div>
-        <p class="text-zinc-400 text-lg hidden lg:flex">|</p>
-        <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hidden lg:flex hover:scale-[105%] transition items-center gap-1.5"><i class="fa-solid fa-download"></i>Instalar app</p>
-        <p class="text-zinc-400 font-semibold hover:text-white text-lg cursor-pointer hidden lg:flex hover:scale-[105%] transition">Registrarte</p>
-        <button class="bg-white px-[30px] py-[10px] text-black font-semibold rounded-full hover:scale-[105%] transition hover:bg-neutral-200 hidden lg:flex">Iniciar sesion</button>
-        <div class="bg-white p-[20px] flex lg:hidden"></div>
-      </div>
-    </nav>
-
-  <div class="flex justify-evenly gap-3 ml-3 mr-3 mb-2 h-full">
-    <aside class="w-96 bg-zinc-950 text-white h-auto p-3 flex flex-col gap-8 rounded-[8px]">
       <div>
-        <div>
-          <h2 class="text-lg font-bold mb-4 flex justify-between items-center">Tu biblioteca<i class="fa-solid fa-plus hover:cursor-pointer hover:rounded-full p-[7px] hover:scale-[110%] hover:transition hover:bg-zinc-800"></i></h2>
+        <div class="mt-[32px] mb-[32px] pl-[15px] pr-[15px]">
+          <div class="flex  flex-wrap">
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer ">Legal</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer">Centro de seguridad y Privacidad</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer ">Politica de Privacidad</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer">Cookies</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer">Información sobre los anuncios</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer">Accesibilidad</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 hover:cursor-pointer">Notice at Collection</p>
+            </div>
+            <div class="mr-[10px]">
+              <p class="text-[11px] text-zinc-300 p-1 bg-emerald-800 rounded-full hover:cursor-pointer hover:transition hover:bg-transparent ">Your Privacy Choices</p>
+            </div>
+            <div>
+              <p class="text-[11px] hover:cursor-pointer hover:underline">Cookies</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-neutral-900 rounded-lg p-4 mb-4">
-          <p class="text-[16px] mb-2 font-bold">Crea tu primera lista</p>
-          <p class="text-[14px] text-white mb-4">Es muy fácil, y te echaremos una mano.</p>
-          <button class="bg-white text-black rounded-full text-sm font-semibold px-4 py-1 hover:scale-[105%] transition">Crear lista</button>
-        </div>
-        <div class="bg-neutral-900 rounded-lg p-4">
-          <p class="text-[16px] mb-2 font-bold">Encuentra pódcasts que quieras seguir</p>
-          <p class="text-[14px] text-white mb-4">Te avisaremos cuando salgan nuevos episodios</p>
-          <button class="bg-white text-black rounded-full text-sm font-semibold px-4 py-1 hover:scale-[105%] transition">Explorar pódcasts</button>
+        <div class=" ">
+          <button class="font-bold text-[14px] border border-neutral-500 rounded-full px-3 py-1 text-xs hover:cursor-pointer hover:border-white hover:scale-[105%] transition flex justify-between items-center gap-1.5"><i class="fa-solid fa-globe"></i>Español de España</button>
         </div>
       </div>
-      <div class="mt-auto">
-        <button class="font-bold text-[14px] border border-neutral-500 rounded-full px-3 py-1 text-xs hover:border-white transition flex justify-between items-center gap-1.5"><i class="fa-solid fa-globe"></i>Español de España</button>
-      </div>
+
     </aside>
-    <!--
-    <aside class=" bg-zinc-900 rounded-[8px] w-96">
-      <div class="">
-        <div>
-          <h2 class="text-white font-bold">Tu Biblioteca</h2>
-        </div>
-        <div class="bg-zinc-800 rounded-[8px]">
-          <h2 class="text-white font-bold text-[16px]">Crea tu primera lista</h2>
-          <p class="text-white text-[14px]">Es muy facil, y te echaremos una mado</p>
-          <button class="bg-white px-[10px] py-[3px] text-black font-semibold rounded-full hover:scale-[105%] hover:bg-neutral-200 hidden lg:flex">Crear lista</button>
-        </div>
-        <div class="bg-zinc-800 rounded-[8px]">
-          <h2 class="text-white font-bold text-[16px]">Encuentra podcasts que quieras seguir</h2>
-          <p class="text-white text-[14px]">Te avisaremos cuando salgan nuevos episodios</p>
-          <button class="bg-white px-[10px] py-[3px] text-black font-semibold rounded-full hover:scale-[105%] hover:bg-neutral-200 hidden lg:flex">Explorar podcasts</button>
-        </div>
+
+    <div class="flex flex-col flex-1 relative">
+    <!--    CONTENIDO PRINCIPAL  CANCIONES    -->
+      <main class="bg-zinc-950 rounded-[8px] flex-1 overflow-auto">
+        <section class="mb-15 p-5">
+          <div class="flex justify-between">
+            <h2 class="text-white hover:cursor-pointer hover:underline font-bold text-[24px]">Canciones en tendencia</h2>
+            <button class="text-[14px] font-bold text-zinc-400 hover:underline cursor-pointer">Mostrar todos</button>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e024310d50745941c4c14a69314" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 1">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">6 Months Later</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Megan Moroney</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e022dd15638161a3bf8f7053f11" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 2">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Outside </h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Cardi B</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e0292fd8d03014dc27eb37e858b" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 3">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Bodies </h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Offset, JID</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e021f50fc82d780d1d935bbddd7" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 4">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Gabriela </h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">KATSEYE</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e0211b6c087ac030b4e396e32c0" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 5">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Mystical Magical</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Benson Boone</p>
+            </div>        
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e024018a6ba07312ec74af169e6" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 6">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Verano Rosa </h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">KAROL G, Feid</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616d00001e020bd44f5ff9ecc99f7770acc5" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 7">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Rock That Body </h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Black Eyed Peas</p>
+            </div>
+          </div>
+        </section>
+
+        <!--    ARTISTAS    -->
+        <section class="p-5">
+          <div class="flex justify-between">
+            <h2 class="text-white hover:cursor-pointer hover:underline font-bold text-[24px]">Artistas populares</h2>
+            <button class="text-[14px] font-bold text-zinc-400 hover:underline cursor-pointer">Mostrar todos</button>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab6761610000517439ba6dcd4355c03de0b50918" class="w-44 h-44 rounded-full" alt="artista Thumbnail 1">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Kendrick Lamar</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab676161000051744293385d324db8558179afd9" class="w-44 h-44 rounded-full" alt="artista Thumbnail 2">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Drake</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab6761610000517499e4fca7c0b7cb166d915789" class="w-44 h-44 rounded-full" alt="artista Thumbnail 3">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Rihanna</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab676161000051749e528993a2820267b97f6aae" class="w-44 h-44 rounded-full" alt="artista Thumbnail 4">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">The Weeknd</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616100005174e17c0aa1714a03d62b5ce4e0" class="w-44 h-44 rounded-full" alt="artista Thumbnail 5">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Post Malone</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>        
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab676161000051744a21b4760d2ecb7b0dcdc8da" class="w-44 h-44 rounded-full" alt="artista Thumbnail 6">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Billie Eillish</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+            <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
+              <img src="https://i.scdn.co/image/ab67616100005174aadc18cac8d48124357c38e6" class="w-44 h-44 rounded-full" alt="artista Thumbnail 7">
+              <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Lady Gaga</h3>
+              <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
+            </div>
+          </div>
+        </section>
+
+        <!--    FOOTER    -->
+        <footer class="mb-15 p-5">
+          <div class="flex justify-between pt-15 pb-15 border-t-2 text-zinc-800">
+              <div class="flex justify-between gap-20">
+                <div>
+                  <ul class="">
+                    <li><p class="text-white font-bold">Empresa</p></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Centro de ayuda</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Aviso legal</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Privacidad</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li><p class="text-white font-bold">Comunidades</p></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Contáctanos</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Información corporativa</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Relaciones con inversores</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li><p class="text-white font-bold">Enlaces utiles</p></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Preferencias de cookies</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Accesibilidad</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Cookies</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li><p class="text-white font-bold">Planes de Spotify</p></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Accesibilidad</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Cookies</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Preferencias de cookies</a></li>
+                    <li><a href="#" class="text-zinc-400 font-[16px] hover:text-white text-lg hover:underline cursor-pointer transition">Accesibilidad</a></li>
+                  </ul>
+                </div>
+              </div>
+            <div>
+              <div class="flex justify-between gap-5">
+                <div class="flex p-[10px] items-center bg-zinc-800 rounded-full hover:scale-[105%] transition hover:bg-zinc-700 text-zinc-400 hover:text-white"><i class="fa-brands fa-instagram fa-lg rounded-full p-1"></i></div>
+                <div class="flex p-[10px] items-center bg-zinc-800 rounded-full hover:scale-[105%] transition hover:bg-zinc-700 text-zinc-400 hover:text-white"><i class="fa-brands fa-facebook rounded-full p-1"></i></div>              
+                <div class="flex p-[10px] items-center bg-zinc-800 rounded-full hover:scale-[105%] transition hover:bg-zinc-700 text-zinc-400 hover:text-white"><i class="fa-brands fa-twitter rounded-full p-1"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t-2 text-zinc-800 pt-10">
+            <p class="text-zinc-400">&copy; Todos los derechos reservados... por Spotify... no por mi</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!--    BARRA INFERIOR    -->
+    <div class="absolute bottom-0 left-0 right-0 hover:cursor-pointer flex justify-between items-center ml-3 mr-3 mb-2 p-3 bg-gradient-to-r from-pink-500 via-indigo-500 to-sky-500 ">
+      <div class="flex-col">
+        <h4 class="text-white text-[14px] font-bold">Muestra de spotify</h4>
+        <p class="text-white text-[16px] font-semibold">Regístrate para disfrutar de canciones y pódcasts sin límites, con anuncios ocasionales. No hace falta tarjeta de crédito.</p>
       </div>
-    </aside>-->
-
-    <main class="bg-zinc-950 rounded-[8px]">
-      <section class="mb-15 p-5">
-        <div class="flex justify-between">
-          <h2 class="text-white hover:cursor-pointer hover:underline font-bold text-[24px]">Canciones en tendencia</h2>
-          <button class="text-[14px] font-bold text-zinc-400 hover:underline cursor-pointer">Mostrar todos</button>
-        </div>
-        <div class="flex justify-between">
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e024310d50745941c4c14a69314" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 1">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">6 Months Later</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Megan Moroney</p>
-          </div>
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e022dd15638161a3bf8f7053f11" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 2">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Outside </h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Cardi B</p>
-          </div>
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e0292fd8d03014dc27eb37e858b" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 3">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Bodies </h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Offset, JID</p>
-          </div>
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e021f50fc82d780d1d935bbddd7" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 4">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Gabriela </h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">KATSEYE</p>
-          </div>
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e0211b6c087ac030b4e396e32c0" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 5">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Mystical Magical</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Benson Boone</p>
-          </div>        
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e024018a6ba07312ec74af169e6" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 6">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Verano Rosa </h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">KAROL G, Feid</p>
-          </div>
-          <div class="flex flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616d00001e020bd44f5ff9ecc99f7770acc5" class="w-44 h-44 rounded-[10px]" alt="cancion Thumbnail 7">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Rock That Body </h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Black Eyed Peas</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="p-5">
-        <div class="flex justify-between">
-          <h2 class="text-white hover:cursor-pointer hover:underline font-bold text-[24px]">Artistas populares</h2>
-          <button class="text-[14px] font-bold text-zinc-400 hover:underline cursor-pointer">Mostrar todos</button>
-        </div>
-        <div class="flex justify-between">
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab6761610000517439ba6dcd4355c03de0b50918" class="w-44 h-44 rounded-full" alt="artista Thumbnail 1">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Kendrick Lamar</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab676161000051744293385d324db8558179afd9" class="w-44 h-44 rounded-full" alt="artista Thumbnail 2">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Drake</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab6761610000517499e4fca7c0b7cb166d915789" class="w-44 h-44 rounded-full" alt="artista Thumbnail 3">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Rihanna</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab676161000051749e528993a2820267b97f6aae" class="w-44 h-44 rounded-full" alt="artista Thumbnail 4">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">The Weeknd</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616100005174e17c0aa1714a03d62b5ce4e0" class="w-44 h-44 rounded-full" alt="artista Thumbnail 5">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Post Malone</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>        
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab676161000051744a21b4760d2ecb7b0dcdc8da" class="w-44 h-44 rounded-full" alt="artista Thumbnail 6">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Billie Eillish</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-          <div class="flex-col gap-1.5 p-4 hover:cursor-pointer transition hover:bg-zinc-800 rounded-[10px]">
-            <img src="https://i.scdn.co/image/ab67616100005174aadc18cac8d48124357c38e6" class="w-44 h-44 rounded-full" alt="artista Thumbnail 7">
-            <h3 class="text-white text-[16px] hover:cursor-pointer hover:underline">Lady Gaga</h3>
-            <p class="text-zinc-400 text-[14px] hover:cursor-pointer hover:underline">Artista</p>
-          </div>
-        </div>
-      </section>
-    </main>
+      <div>
+        <button class="bg-white px-[30px] py-[10px] text-black font-bold rounded-full hover:cursor-pointer hover:scale-[105%] transition hover:bg-neutral-200 hidden lg:flex">Registrarte gratis</button>
+      </div>
+    </div>
   </div>
-  </body>
+</body>
 </html>
